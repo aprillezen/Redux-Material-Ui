@@ -1,4 +1,11 @@
+html{
+	 font-family: 'Roboto', sans-serif;
+     -webkit-font-smoothing: antialiased;
+}
+
 body{
-	margin: 0;
-	 background-color:rgb(158, 158, 158);
+	 margin: 0;
+	 background-color:#e5e5e5;
+	 font-size: 15px;
+     line-height: 24px;
 }

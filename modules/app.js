@@ -4,7 +4,7 @@ import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 
-class Home extends React.Component{
+class App extends React.Component{
 	constructor(props) {
     	super(props);
     	this.state = {open: false};
@@ -17,11 +17,18 @@ class Home extends React.Component{
 	render(){
 		return(
 			<div>
-			    <AppBar title="Title" onLeftIconButtonTouchTap={this.handleLeftIconClick.bind(this)} iconClassNameRight="muidocs-icon-navigation-expand-more"/>
+			    <AppBar 
+			    	title="AcademBox" 
+			    	onLeftIconButtonTouchTap={this.handleLeftIconClick.bind(this)} 
+			    	showMenuIconButton={false}/>
 				<div className="row">
-					<RaisedButton label=	"Default" />
+					{this.props.children}
 				</div>
-				<Drawer open={this.state.open}>
+				<Drawer 
+					docked={false}
+					width={200}
+					open={this.state.open}
+					onRequestChange={(open) => this.setState({open})} >
 		          <MenuItem>Menu Item</MenuItem>
 		          <MenuItem>Menu Item 2</MenuItem>
 		        </Drawer>
@@ -30,4 +37,4 @@ class Home extends React.Component{
 	}
 }
 
-export default Home
+export default App
